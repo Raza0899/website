@@ -1,0 +1,186 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e6ffe6; /* Light green background */
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Top Navigation Bar */
+.topnav {
+    background-color: #3cb371; /* A medium sea green for the top nav */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.topnav .menu-header {
+    display: flex;
+    align-items: center;
+}
+
+.topnav .logo-link {
+    color: #f0f8ff; /* Off-white for better contrast */
+    font-size: 1.5em;
+    font-weight: bold;
+    text-decoration: none;
+    margin-left: 10px; /* Space between icon and name */
+}
+
+.topnav .menu-icon {
+    display: none; /* Hidden by default */
+    cursor: pointer;
+    padding: 10px 12px;
+}
+
+.topnav .menu-icon .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+.topnav .menu-links {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+}
+
+.topnav a {
+    color: white;
+    text-align: center;
+    padding: 18px 20px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.topnav a:hover {
+    background-color: #2e8b57; /* Darker green on hover */
+    color: white;
+}
+
+.topnav a.active {
+    background-color: #20b2aa; /* Light sea green for active link */
+    color: white;
+}
+
+/* Responsive Navigation Menu */
+@media screen and (max-width: 600px) {
+    .topnav {
+        justify-content: flex-start;
+    }
+    .topnav .menu-icon {
+        display: block;
+    }
+    .topnav .menu-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #3cb371; /* Match topnav background */
+        position: absolute;
+        top: 60px; /* Height of the menu-header */
+        left: 0;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+    .topnav .menu-links.show {
+        display: flex;
+    }
+    .topnav a {
+        padding: 12px 16px;
+        text-align: left;
+    }
+}
+
+/* Header Section */
+header {
+    background-color: #2e8b57; /* Sea green for the header */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-logo {
+    height: 60px;
+    margin-right: 15px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+/* Main Content */
+main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+}
+
+main h2 {
+    font-size: 2em;
+    color: #2e8b57; /* Matching green for main heading */
+    margin-bottom: 20px;
+}
+
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.contact-card {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid #90ee90; /* Light green border */
+    border-radius: 8px;
+    background-color: #fff;
+    text-decoration: none;
+    color: #333;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.contact-card img {
+    height: 30px;
+    width: 30px;
+    margin-right: 15px;
+}
+
+.contact-card span {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+/* Footer */
+footer {
+    background-color: #3cb371; /* Matching green for the footer */
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: auto;
+}
