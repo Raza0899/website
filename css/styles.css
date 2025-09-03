@@ -1,160 +1,190 @@
-/* General Styles */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-            color: #333;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
+/* --- Global Styles & Layout --- */
 
-        /* Top Navigation Bar */
-        .topnav {
-            overflow: hidden;
-            background-color: #4CAF50;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            padding: 0 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+/* Ensures the body takes up the full viewport height and uses Flexbox for footer positioning */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+}
 
-        .topnav .menu-icon {
-            display: none; /* Hidden on large screens */
-            cursor: pointer;
-            padding: 14px 16px;
-            color: white;
-            font-size: 24px;
-        }
+body {
+    display: flex;
+    flex-direction: column;
+}
 
-        .topnav .menu-links {
-            display: flex;
-        }
+/* The main content area grows to push the footer to the bottom */
+main {
+    flex-grow: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
 
-        .topnav a {
-            color: white;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-            font-size: 17px;
-            transition: background-color 0.3s, color 0.3s;
-        }
+/* --- Top Navigation Bar --- */
+.topnav {
+    background-color: #3cb371;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-        .topnav a:hover {
-            background-color: #ddd;
-            color: black;
-        }
+.topnav .menu-header {
+    display: flex;
+    align-items: center;
+}
 
-        .topnav a.active {
-            background-color: #2e8b57;
-            color: white;
-        }
+.nav-logo {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
 
-        /* Responsive Navigation Menu */
-        @media screen and (max-width: 600px) {
-            .topnav .menu-links {
-                display: none;
-                flex-direction: column;
-                width: 100%;
-                background-color: #4CAF50;
-                position: absolute;
-                top: 52px; /* Height of the topnav */
-                left: 0;
-                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            }
-            .topnav .menu-links.show {
-                display: flex;
-            }
-            .topnav .menu-icon {
-                display: block;
-            }
-            .topnav a {
-                padding: 12px 16px;
-                text-align: left;
-            }
-        }
+.topnav .logo-link {
+    color: #f0f8ff;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-decoration: none;
+}
 
-        /* Main Header Section */
-        .main-header {
-            background-color: #333;
-            color: white;
-            padding: 20px;
-            text-align: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        }
+.topnav .menu-icon {
+    display: none; /* This hides the hamburger menu on desktop */
+    cursor: pointer;
+    padding: 10px 12px;
+}
 
-        .header-content {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+.topnav .menu-icon .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+    transition: 0.4s;
+}
 
-        .header-logo {
-            height: 60px;
-            margin-right: 15px;
-        }
+.topnav .menu-links {
+    display: flex; /* This is the main change: the menu is shown by default */
+    transition: transform 0.3s ease-in-out;
+    list-style: none; /* Added to remove any list styling */
+    margin: 0;
+    padding: 0;
+}
 
-        .main-header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
+.topnav a {
+    color: white;
+    text-align: center;
+    padding: 18px 20px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s;
+}
 
-        /* Main Content and Game Cards */
-        main {
-            flex-grow: 1;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            padding: 20px;
-        }
+.topnav a:hover {
+    background-color: #2e8b57;
+    color: white;
+}
 
-        .game-card {
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-            overflow: hidden;
-            width: 250px;
-            text-align: center;
-        }
+.topnav a.active {
+    background-color: #20b2aa;
+    color: white;
+}
 
-        .game-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
+/* --- Header & Main Content Styles --- */
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
 
-        .game-card a {
-            text-decoration: none;
-            color: inherit;
-            display: block;
-        }
+.game-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    overflow: hidden;
+    width: 250px;
+    text-align: center;
+}
 
-        .game-card figure {
-            margin: 0;
-        }
+.game-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
 
-        .game-card img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
+.game-card a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
 
-        .game-card figcaption {
-            padding: 15px;
-            font-size: 1.2em;
-            font-weight: bold;
-            color: #4CAF50;
-            background-color: #f9f9f9;
-        }
+.game-card figure {
+    margin: 0;
+}
 
-        /* Footer styles */
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 15px 0;
-            margin-top: auto;
-        }
+.game-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.game-card figcaption {
+    padding: 15px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #4CAF50;
+    background-color: #f9f9f9;
+}
+
+/* --- Footer Styles --- */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+}
+
+/* --- Responsive Layout --- */
+@media screen and (max-width: 600px) {
+    .topnav {
+        justify-content: flex-start;
+    }
+
+    .topnav .menu-header {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .topnav .menu-icon {
+        display: block; /* Hamburger menu is now visible on small screens */
+    }
+
+    .topnav .menu-links {
+        display: none; /* Menu links are hidden by default on small screens */
+        flex-direction: column;
+        width: 100%;
+        background-color: #3cb371;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .topnav .menu-links.show {
+        display: flex; /* This is toggled by your JavaScript to show the menu */
+    }
+
+    .topnav a {
+        padding: 12px 16px;
+        text-align: left;
+    }
+}
