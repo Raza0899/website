@@ -83,11 +83,7 @@ body {
     color: white;
 }
 
-/* Responsive Navigation Menu */
-@media screen and (max-width: 600px) {
-    .topnav {
-        justify-content: flex-start;
-    }
+
     .topnav .menu-icon {
         display: block;
     }
