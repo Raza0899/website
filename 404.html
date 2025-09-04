@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found - Play N Joy</title>
+    <style>
+   /* --- Global Styles & Layout --- */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #e6ffe6;
+    color: #333;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* --- Top Navigation Bar --- */
+.topnav {
+    background-color: #3cb371;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.topnav .menu-header {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin: 0;
+}
+
+.nav-logo {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.topnav .logo-link {
+    color: #f0f8ff;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.topnav .menu-icon {
+    display: none;
+    cursor: pointer;
+    padding: 10px 12px;
+}
+
+.topnav .menu-icon .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+.topnav .menu-links {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.topnav a {
+    color: white;
+    text-align: center;
+    padding: 18px 20px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.topnav a:hover {
+    background-color: #2e8b57;
+    color: white;
+}
+
+.topnav a.active {
+    background-color: #20b2aa;
+    color: white;
+}
+
+/* --- Header & Main Content Styles --- */
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.game-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    overflow: hidden;
+    width: 250px;
+    text-align: center;
+}
+
+.game-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.game-card a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.game-card figure {
+    margin: 0;
+}
+
+.game-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.game-card figcaption {
+    padding: 15px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #4CAF50;
+    background-color: #f9f9f9;
+}
+
+/* --- Footer Styles --- */
+footer {
+    background-color: grey;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+}
+
+/* --- Responsive Layout --- */
+@media screen and (max-width: 600px) {
+    .topnav {
+        justify-content: flex-start;
+    }
+    .topnav .menu-header {
+        width: 100%;
+        justify-content: space-between;
+    }
+    .topnav .menu-icon {
+        display: block;
+    }
+    .topnav .menu-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #3cb371;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+    .topnav .menu-links.show {
+        display: flex;
+    }
+    .topnav a {
+        padding: 12px 16px;
+        text-align: left;
+    }
+}
+
+/* New Styles for the 404 Error Page */
+.error-card {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+    margin: 20px;
+}
+
+.error-card h1 {
+    font-size: 4em;
+    color: #3cb371;
+    margin-bottom: 0;
+}
+
+.error-card h2 {
+    font-size: 1.8em;
+    color: #2e8b57;
+    margin-top: 5px;
+}
+
+.error-card p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #555;
+}
+
+.error-card .error-links a {
+    font-size: 1em;
+    font-weight: bold;
+    color: #3cb371;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.error-card .error-links a:hover {
+    text-decoration: underline;
+} 
+  </style>
+</head>
+<body>
+    <div class="topnav">
+        <div class="menu-header">
+            <div class="menu-icon" onclick="toggleMenu()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <a class="logo-link" href="/">
+                <img src="/images/logo.png" alt="Play and Joy website logo" class="nav-logo">
+                Play~N~Joy
+            </a>
+        </div>
+        <div class="menu-links">
+            <a href="https://www.wuumart.xyz">Home</a>
+            <a href="/information/news.html">News</a>
+            <a href="/information/contact.html">Contact</a>
+            <a href="/information/about.html">About</a>
+        </div>
+    </div>
+    <main>
+        <div class="error-card">
+            <h1>404</h1>
+            <h2>Page Not Found</h2>
+            <p>We're sorry, the page you are looking for could not be found. It may have been moved or deleted.</p>
+            <p>Please use the navigation above or try one of the links below:</p>
+            <div class="error-links">
+                <a href="/">Go to Homepage</a>  <br>
+                
+                <br><a href="/information/contact.html">Contact Us</a>
+            </div>
+        </div>
+    </main>
+    <footer role="contentinfo">
+        <p>&copy; All Rights Reserved</p>
+    </footer>
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.menu-links');
+            menu.classList.toggle('show');
+        }
+    </script>
+</body>
+</html>
