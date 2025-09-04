@@ -3,7 +3,7 @@ body {
     font-family: 'Segoe UI', Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #e6ffe6; /* Light green background */
+    background-color: #e6ffe6;
     color: #333;
     display: flex;
     flex-direction: column;
@@ -23,6 +23,8 @@ body {
 .topnav .menu-header {
     display: flex;
     align-items: center;
+    gap: 0;
+    margin: 0;
 }
 
 .nav-logo {
@@ -30,7 +32,6 @@ body {
     width: 40px;
     border-radius: 50%;
     object-fit: cover;
-    margin-left: 10px;
     margin-right: 10px;
 }
 
@@ -39,6 +40,8 @@ body {
     font-size: 1.5em;
     font-weight: bold;
     text-decoration: none;
+    display: flex;
+    align-items: center;
 }
 
 .topnav .menu-icon {
@@ -58,6 +61,9 @@ body {
 .topnav .menu-links {
     display: flex;
     transition: transform 0.3s ease-in-out;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .topnav a {
@@ -79,7 +85,7 @@ body {
     color: white;
 }
 
-/* --- Main Content --- */
+/* --- Main Content Styles --- */
 main {
     flex-grow: 1;
     display: flex;
@@ -88,12 +94,30 @@ main {
     padding: 20px;
 }
 
-/* --- Styles for the 'Outstanding' Text --- */
+/* New Styles for the About Us Card */
+.about-us-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+    margin: 20px;
+}
+
+.about-us-card h1 {
+    font-size: 2.5em;
+    color: #3cb371;
+    margin-bottom: 10px;
+}
+
+/* Styles for the 'Outstanding' Text */
 .quote-container {
     margin: 40px auto;
     padding: 30px;
     background-color: #f9f9f9;
-    border-left: 5px solid #3cb371; /* A green border for emphasis */
+    border-left: 5px solid #3cb371;
     border-radius: 5px;
     max-width: 500px;
     text-align: center;
@@ -101,7 +125,7 @@ main {
 }
 
 .quote-container p {
-    font-family: Georgia, 'Times New Roman', Times, serif; /* A professional serif font */
+    font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 1.5em;
     font-weight: bold;
     color: #333;
@@ -109,10 +133,22 @@ main {
     margin: 0;
 }
 
-/* --- Responsive Navigation Menu --- */
+/* --- Footer Styles --- */
+footer {
+    background-color: grey;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+}
+
+/* --- Responsive Layout --- */
 @media screen and (max-width: 600px) {
     .topnav {
         justify-content: flex-start;
+    }
+    .topnav .menu-header {
+        width: 100%;
+        justify-content: space-between;
     }
     .topnav .menu-icon {
         display: block;
@@ -134,16 +170,4 @@ main {
         padding: 12px 16px;
         text-align: left;
     }
-    .topnav .nav-logo {
-        margin-left: 0;
-    }
-}
-
-/* --- Footer Styles --- */
-footer {
-    background-color: grey;
-    color: white;
-    text-align: center;
-    padding: 15px 0;
-    margin-top: auto;
 }
