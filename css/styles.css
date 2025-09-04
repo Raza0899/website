@@ -1,23 +1,21 @@
 /* --- Global Styles & Layout --- */
-
-/* Ensures the body takes up the full viewport height and uses Flexbox for footer positioning */
 html, body {
     height: 100%;
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', Arial, sans-serif;
-    background-color: #f0f0f0;
+    background-color: #e6ffe6; /* Changed to light green */
     color: #333;
 }
 
 body {
     display: flex;
     flex-direction: column;
+    min-height: 100vh; /* Ensures the body takes up the full viewport height */
 }
 
-/* The main content area grows to push the footer to the bottom */
 main {
-    flex-grow: 1;
+    flex-grow: 1; /* Pushes the footer to the bottom */
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -38,6 +36,8 @@ main {
 .topnav .menu-header {
     display: flex;
     align-items: center;
+    gap: 0;
+    margin: 0;
 }
 
 .nav-logo {
@@ -53,10 +53,12 @@ main {
     font-size: 1.5em;
     font-weight: bold;
     text-decoration: none;
+    display: flex;
+    align-items: center;
 }
 
 .topnav .menu-icon {
-    display: none; /* This hides the hamburger menu on desktop */
+    display: none;
     cursor: pointer;
     padding: 10px 12px;
 }
@@ -70,9 +72,9 @@ main {
 }
 
 .topnav .menu-links {
-    display: flex; /* This is the main change: the menu is shown by default */
+    display: flex;
     transition: transform 0.3s ease-in-out;
-    list-style: none; /* Added to remove any list styling */
+    list-style: none;
     margin: 0;
     padding: 0;
 }
@@ -104,6 +106,14 @@ main {
     justify-content: center;
     text-align: center;
     padding: 20px;
+}
+
+.header-content p {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+    margin: 20px 0;
 }
 
 .game-card {
@@ -145,9 +155,72 @@ main {
     background-color: #f9f9f9;
 }
 
+/* --- New Styles for the 404 Error & About Us Cards --- */
+.error-card, .about-us-card {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+    margin: 20px;
+}
+
+.error-card h1, .about-us-card h1 {
+    font-size: 2.5em;
+    color: #3cb371;
+    margin-bottom: 10px;
+}
+
+.error-card h2 {
+    font-size: 1.8em;
+    color: #2e8b57;
+    margin-top: 5px;
+}
+
+.error-card p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #555;
+}
+
+.error-card .error-links a {
+    font-size: 1em;
+    font-weight: bold;
+    color: #3cb371;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.error-card .error-links a:hover {
+    text-decoration: underline;
+}
+
+/* --- Styles for the 'Outstanding' Text --- */
+.quote-container {
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-left: 5px solid #3cb371;
+    border-radius: 5px;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.quote-container p {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+}
+
 /* --- Footer Styles --- */
 footer {
-    background-color: #333;
+    background-color: grey;
     color: white;
     text-align: center;
     padding: 15px 0;
@@ -158,18 +231,15 @@ footer {
     .topnav {
         justify-content: flex-start;
     }
-
     .topnav .menu-header {
         width: 100%;
         justify-content: space-between;
     }
-
     .topnav .menu-icon {
-        display: block; /* Hamburger menu is now visible on small screens */
+        display: block;
     }
-
     .topnav .menu-links {
-        display: none; /* Menu links are hidden by default on small screens */
+        display: none;
         flex-direction: column;
         width: 100%;
         background-color: #3cb371;
@@ -178,11 +248,9 @@ footer {
         left: 0;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     }
-
     .topnav .menu-links.show {
-        display: flex; /* This is toggled by your JavaScript to show the menu */
+        display: flex;
     }
-
     .topnav a {
         padding: 12px 16px;
         text-align: left;
