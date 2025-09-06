@@ -1,3 +1,7 @@
+<Files .htaccess>
+    Require all denied
+</Files>
+
 # Turn on the Rewrite Engine
 RewriteEngine On
 RewriteBase /
