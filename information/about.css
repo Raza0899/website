@@ -148,7 +148,6 @@ footer {
     }
     .topnav .menu-header {
         width: 100%;
-        justify-content: space-between;
     }
     .topnav .menu-icon {
         display: block;
